@@ -23,7 +23,7 @@ public class Rectangle
     public void setLength(double length)
     {
 
-        if (((length >= 0.0) && (length <= 20.0)  && ((length*10)%10)!=0))
+        if (((length >= 0.0) && (length <= 20.0)  && ((length*10)%10)!=0)  )
         {
             this.length = length;
         } else
@@ -31,11 +31,16 @@ public class Rectangle
             {
               double x;
               do {
-                  System.out.println("enter valid length");
+                  System.out.println("enter valid floating point length in between 0.0 to 20.0");
                   Scanner in = new Scanner(System.in);
+                  while (!in.hasNextDouble())
+                  {
+                      System.out.println("Invalid input\n Type the double-type number:");
+                      in.next();
+                  }
                   x = in.nextDouble();
                   this.length = x;
-              }while(this.length>=0 && this.length<=20 && ((this.length*10)%10)==0);
+              }while(this.length<=0 || this.length>20  || ((this.length*10)%10)==0);
 
         }
     }
@@ -53,11 +58,16 @@ public class Rectangle
                 {
                     do {
 
-                        System.out.println("enter valid width");
+                        System.out.println("enter floating point  width in between 0.0 to 20.0");
                         Scanner in = new Scanner(System.in);
+                        while (!in.hasNextDouble())
+                        {
+                            System.out.println("Invalid input\n Type the double-type number:");
+                            in.next();
+                        }
                         double y = in.nextDouble();
                         this.width = y;
-                    }while(this.width>=0 && this.width<=20 && ((this.width*10)%10)==0);
+                    }while(this.width<=0 || this.width>20 || ((this.width*10)%10)==0);
 
             }
 
@@ -81,6 +91,7 @@ public class Rectangle
         return width;
     }
 
+
     public double getArea() {
         area = length * width;
         area=area*100;
@@ -89,6 +100,7 @@ public class Rectangle
 
         return area;
     }
+
 
     public double getPerimeter() {
 

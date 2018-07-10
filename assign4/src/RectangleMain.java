@@ -24,7 +24,7 @@ public class RectangleMain {
         Rectangle rectangle[] = new Rectangle[5];
 
 
-        //  Rectangle1 ob=new Rectangle1(1,2);
+
 
 
         for (int i = 0; i < 5; i++)
@@ -32,30 +32,30 @@ public class RectangleMain {
             rectangle[i] = new Rectangle();
             System.out.println("Enter length");
             Scanner in = new Scanner(System.in);
+
+            while (!in.hasNextDouble())
+            {
+                System.out.println("Invalid input\n Type the double-type number:");
+                in.next();
+            }
             double length = in.nextDouble();
 
             rectangle[i].setLength(length);
 
-          /*  if (a <= 0 || a>20)
-            {
 
-                System.out.println("invalid length");
-                continue;
-            }*/
 
             System.out.println("Enter width");
             Scanner in1 = new Scanner(System.in);
-            double width = in1.nextDouble();
-
-           /* if (b <= 0 || b >20)
+            while (!in1.hasNextDouble())
             {
-
-                System.out.println("invalid width");
-                continue;
-            }*/
+                System.out.println("Invalid input\n Type the double-type number:");
+                in1.next();
+            }
+            double width = in1.nextDouble();
 
 
             rectangle[i].setWidth(width);
+
 
             System.out.println("Length="+rectangle[i].getLength());
             System.out.println("width="+rectangle[i].getWidth());
