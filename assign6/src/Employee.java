@@ -1,3 +1,7 @@
+
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 public class Employee {
     int number;
     String name;
@@ -5,35 +9,40 @@ public class Employee {
 
 
     Employee() {
-        number = 1;
-        name = "m";
-        date = "6/7/18";
+        this.number = 1;
+        this.name = "m";
+        this.date = "06.07.2018";
 
     }
 
-    void setNumber(int a) {
-        number = a;
+    void setNumber(int a)
+    {
+        this.number = a;
     }
 
-    void setName(String b) {
-        name = b;
+    void setName(String b)
+    {
+        this.name = b;
     }
 
-    void setDate(String c) {
-        date = c;
+    void setDate(String c)
+    {
+
+        this.date = c;
 
     }
 
-    int getNumber() {
-        return number;
+    int getNumber()
+    {
+        return this.number;
     }
 
     String getName() {
-        return name;
+        return this.name;
     }
 
     String getDate() {
-        return date;
+        return this.date;
     }
 
 }
