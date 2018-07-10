@@ -5,8 +5,8 @@ public class book2 {
     public void createbook(String bookTitle,float price,book c)
     {
 
-            c.set_book_title(bookTitle);
-            c.set_price(price);
+            c.setBookTitle(bookTitle);
+            c.setPrice(price);
 
 
     }
@@ -17,8 +17,8 @@ public class book2 {
         //d.get_book_title();
         //2
         //d.get_price();
-        System.out.println("book_details  " + c.get_book_title());
-        System.out.println(c.get_price());
+        System.out.println("book_details  " + c.getBookTitle());
+        System.out.println(c.getPrice());
 
 
     }
