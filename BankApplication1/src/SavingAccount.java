@@ -46,23 +46,18 @@ public class SavingAccount extends Customer{
     }
     public void withDraw(float x)
     {
-        if(balance>x)
+        if(balance>=x)
             balance=balance-x;
         else
             System.out.println("your balance is only "+balance);
     }
 
-    public float getBalance() {
+    public float getBalance()
+    {
         return balance;
     }
-/*public float validateAmount(float amount)
-{
-    if(amount<=0){
-        System.out.println("enter amount greater than zero");
-        this.amount=amount;
-    }
 
-}*/
+
 
 }
 
