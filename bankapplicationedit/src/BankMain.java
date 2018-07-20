@@ -4,10 +4,8 @@ import java.util.*;
 public class BankMain extends Customer {
     public static void main(String arg[]) {
         Random rand = new Random();
-        //Customer customer=new Customer();
-        // SavingAccount savingAccount = new SavingAccount();
-        //FixedAccount fixedAccount=new FixedAccount();
-        int n=10, accountNo = 0, ch, type,key=0,i=0,j=0;
+
+        int n=15, accountNo = 0, ch, type,key=0,i=0,j=0;
         float amount;
          LinkedHashMap<Integer,Customer>a=new LinkedHashMap<Integer, Customer>();
          LinkedHashMap<Integer,FixedAccount>b=new LinkedHashMap<Integer , FixedAccount>();
@@ -58,6 +56,9 @@ public class BankMain extends Customer {
                                 System.out.println("enter your name");
                                 String name = sin.next();
                                 customer[i].setName(name);
+
+                                customer[i].validateDateOfBirth();
+
                                 System.out.println("Enter your address");
                                 System.out.println("flat number/home:");
                                 String address1=sin.next();
@@ -213,7 +214,7 @@ public class BankMain extends Customer {
                                 if (aNo == key) {
                                     Customer a1 = entry.getValue();
                                     System.out.println("account number=" + key + " Details:");
-                                    System.out.println("name: " + a1.name + " adress: " + a1.address + "  adhar number: " + a1.adharNo + " Mobile number: " + a1.mobileNo + " pan number: " + a1.panNo);
+                                    System.out.println("name: " + a1.name + " adress: " + a1.address + "  adhar number: " + a1.adharNo + " Mobile number: " + a1.mobileNo + " pan number: " + a1.panNo +" date of birth: "+a1.dateOfBirth);
                                 }
                             }
                             for (Map.Entry<Integer, SavingAccount> entry : c.entrySet()) {

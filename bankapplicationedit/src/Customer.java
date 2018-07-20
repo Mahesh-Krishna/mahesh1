@@ -1,11 +1,11 @@
-import java.util.Date;
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.Scanner;
 public  class Customer extends Bank {
     String name, address, panNo,mobileNo;
     String adharNo,dateOfBirth;
-    boolean temp3=false,temp1=false,temp2=false;
+    boolean temp3=false,temp1=false,temp2=false,temp4=false;
     Scanner in = new Scanner(System.in);
 
     public  void setName(String name)
@@ -26,7 +26,12 @@ public  class Customer extends Bank {
         this.adharNo = adharNo;
     }
 
-    public String getMobileNo() {
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getMobileNo()
+    {
         return mobileNo;
     }
 
@@ -102,11 +107,49 @@ public void validateMobileNo(){
 
     public  void validateDateOfBirth()
     {
-        System.out.println("enter date of birth");
-        
+      int date,year,month;
+
+      System.out.println("enter date of birth ");
+        do {
+            System.out.println("enter year of born");
+            while (!in.hasNextInt()) {
+                System.out.println("invalid year \n enter born year");
+                in.next();
+            }
+            year = in.nextInt();
+        }while(year<1910 || year>=2018);
 
 
-    }
+      do {
+          System.out.println("enter born month");
+          while (!in.hasNextInt())
+          {
+              System.out.println("invalid month enter month number");
+              in.next();
+          }
+
+          month = in.nextInt();
+      } while(month<=0 || month>12);
+
+
+       do {
+           System.out.println("enter date ");
+           while (!in.hasNextInt()) {
+               System.out.println("invalid date");
+               in.next();
+           }
+           date = in.nextInt();
+       }while (date<0 || date>31 || (date>30 && (month==2 || month==4 || month==6 || month==9 || month==11)) || (date>29 && month==2) || (date>28 && month==2 && year%4!=0));
+
+
+
+        dateOfBirth=Integer.toString(date)+"/"+Integer.toString(month)+"/"+Integer.toString(year);
+        setDateOfBirth(dateOfBirth);
+        int age=2018-year;
+        System.out.println("age="+age);
+
+
+        }
 
 
 
